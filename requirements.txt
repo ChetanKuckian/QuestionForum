@@ -1,0 +1,10 @@
+Django==3.1.4
+django-allauth==0.44.0
+django-cors-headers==3.6.0
+django-registration==3.1.1
+django-rest-auth==0.9.5
+djangorestframework==3.12.2
+drf-yasg==1.20.0
+mysqlclient==2.0.3
+requests==2.25.0
+
