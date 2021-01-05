@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     'rest_auth',
     'rest_auth.registration',
 
-    'crispy_forms',
-
+    'corsheaders',
+    
     'users',
     'questions',
     'drf_yasg'
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -136,6 +137,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 STATIC_URL = '/static/'
 SITE_ID = 1
 AUTH_USER_MODEL = "users.CustomUser"
@@ -152,5 +155,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 2
+    'PAGE_SIZE': 10
 }
